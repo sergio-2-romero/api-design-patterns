@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.atos.firstbackend.Greeting;
 import com.atos.firstbackend.model.User;
 import com.atos.firstbackend.repository.UserRepository;
 
@@ -72,6 +73,13 @@ public class UserServiceImp implements UserService {
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+	}
+
+	@Override
+	public ResponseEntity<Greeting> getGreeting() {
+		Greeting greeting = Greeting.getGreeting();
+		greeting.getGreetText();
+		return new ResponseEntity<>(greeting, HttpStatus.OK);
 	}
 
 }

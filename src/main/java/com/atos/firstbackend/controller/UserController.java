@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import com.atos.firstbackend.Greeting;
 import com.atos.firstbackend.model.User;
 import com.atos.firstbackend.service.UserService;
 
@@ -41,6 +42,11 @@ public class UserController {
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<HttpStatus> deleteUser(@PathVariable("id") int userId) {
 		return userService.deleteUser(userId);
+	}
+
+	@GetMapping("/greeting")
+	public ResponseEntity<Greeting> getGreeting() {
+		return userService.getGreeting();
 	}
 
 }

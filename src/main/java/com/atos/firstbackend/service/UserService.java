@@ -2,6 +2,7 @@ package com.atos.firstbackend.service;
 
 import java.util.List;
 
+import com.atos.firstbackend.Greeting;
 import com.atos.firstbackend.model.User;
 
 import org.springframework.http.HttpStatus;
@@ -16,5 +17,7 @@ public interface UserService {
 	ResponseEntity<User> updateUser(int userId, User user);
 
 	ResponseEntity<HttpStatus> deleteUser(int userId);
+
+	ResponseEntity<Greeting> getGreeting();
 
 }
